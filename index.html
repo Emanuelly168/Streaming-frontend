@@ -1,63 +1,94 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <title>Index</title>
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-
-    <!--Aqui contem a logo e uma barra de buscar para consulta-->
-    
-    <header class="cabeca">
-        <img id="logo" src="imgs/logo.png" alt="Logo da página">
-        <label for="buscador">Buscar filmes: </label>
-        <input type="text" id="buscador" name="buscador" aria-label="Campo de busca de filmes">
-        <a href="index.html">Home</a>
-        <a href="login.html"><button>Login</button></a>
-        <a href="feedback.html">Mande seu feedback!</a>
+    <header>
+        <div class="nav-container">
+            <h1><img id="logo" src="/imagens/Moovix_mds_vou_me_matar.png" alt="Logo da página"></h1>
+            <div class="login-button">
+                <a href="/login.html">Login</a>
+            </div>
+            <div class="menu-links">
+                <a href="index.html">Início</a>
+                <a href="#">Filmes</a>
+                <a href="#">Séries</a>
+                <a href="contato.html">Contato</a>
+            </div>
+            <form class="busca-container" role="search" aria-label="Buscar filmes" onsubmit="event.preventDefault();">
+            <label for="buscador">Buscar filmes:</label>
+            <input type="text" id="buscador" name="buscador" aria-label="Campo de busca de filmes" placeholder="Digite o nome">
+            <button type="submit" id="butao" aria-label="Buscar">🔍</button>
+        </form>
+        </div>
     </header>
 
-    <h2>Comédia</h2>
+    <main>
+        <div class="container">
+            <div class="categoria-titulo">Filmes de Comédia</div>
+            <div class="grade-filmes">
+                <div class="midia">
+                    <a href="#">
+                        <img src="/imagens/com_img1.png" alt="Poster As Branquelas">
+                        <div class="produto-info">
+                            <h3>As Branquelas</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="midia">
+                    <a href="#">
+                        <img src="/imagens/com_img2.png" alt="Poster Debi e Lóide">
+                        <div class="produto-info">
+                            <h3>Debi e Lóide</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="midia">
+                    <a href="#">
+                        <img src="/imagens/com_img3.png" alt="Poster Auto da Compadecida">
+                        <div class="produto-info">
+                            <h3>O Auto da Compadecida</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
-    <!--2 classes chamadas "divisão" onde em ambas as classes terão uma classe filha "filme"-->
+            <div class="categoria-titulo">Filmes de Terror</div>
+            <div class="grade-filmes">
+                <div class="midia">
+                    <a href="#">
+                        <img src="/imagens/terror_img1.png" alt=" Poster Boneca do Mal">
+                        <div class="produto-info">
+                            <h3>Boneca do Mal</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="midia">
+                    <a href="#">
+                        <img src="/imagens/terror_img2.png" alt="Poster Sobrenatural">
+                        <div class="produto-info">
+                            <h3>Sobrenatural</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="midia">
+                    <a href="detalhesProd.html">
+                        <img src="/imagens/terror_img3.png" alt="Poster A Hora do Pesadelo">
+                        <div class="produto-info">
+                            <h3>A Hora do Pesadelo</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    <div class="divisao">
-        <div class="filmes">
-            <img src="/imgs/com_img1.png" alt="Cartaz do filme As Branquelas">
-            <p>As Branquelas</p>
-        </div>
-        <div class="filmes">
-            <img src="/imgs/com_img2.png" alt="Cartaz do filme Debi e Lóide">
-            <p>Debi e Lóide</p>
-        </div>
-        <div class="filmes">
-            <img src="/imgs/com_img3.png" alt="Cartaz do filme O Auto da Compadecida">
-            <p>O Auto da Compadecida</p>
-        </div>
-    </div>
-
-    <h2>Terror</h2>
-
-    <!--segunda Classe "divisão" onde terão os filmes de terror em uma div filha de "divisão" vai conter os filmes-->
-
-    <div class="divisao">
-        <div class="filmes">
-            <img src="/imgs/terror_img1.png" alt="Cartaz do filme Boneco do Mal">
-            <p>Boneco do Mal</p>
-        </div>
-        <div class="filmes">
-            <img src="/imgs/terror_img2.png" alt="Cartaz do filme Sobrenatural">
-            <p>Sobrenatural</p>
-        </div>
-        <div class="filmes">
-            <img src="/imgs/terror_img3.png" alt="Cartaz do filme A Hora do Pesadelo">
-            <p>A Hora do Pesadelo</p>
-        </div>
-    </div>
-    
+    <footer>
+        <p>&copy; 2025 Moovix | Todos os direitos reservados</p>
+    </footer>
 </body>
 </html>
