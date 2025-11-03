@@ -13,15 +13,18 @@
             <div class="login-box">
                 <h1>Cadastro</h1>
                 <input type="text" id="name" name="nome" placeholder="Nome Completo" required autocomplete="name">
-                <input type="tel" id="phone" name="telefone" placeholder="Telefone" required autocomplete="tel" pattern="[0-9]{10,11}" title="Informe um número de telefone válido (apenas números).">
+                <input type="tel" id="phone" name="telefone" placeholder="Telefone" autocomplete="tel" pattern="[0-9]{10,11}">
                 <input type="email" id="email" name="email" placeholder="Email" required autocomplete="email">
                 <input type="password" id="password" name="password" placeholder="Senha" required autocomplete="new-password">
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirme a Senha" required>
                 <input type="submit" value="Cadastrar">
+                <div id="message" role="status" aria-live="polite"></div>
             </div>
             <div class="info-text">
                 <p>Já tem uma conta? <a href="login.html">Faça login aqui</a></p>
             </div>
         </div>
     </form>
+    <script src="cadastro.js"></script>
 </body>
 </html>
