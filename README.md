@@ -16,8 +16,4 @@ Guilherme Emanuel - Tester/Desenvolvedor
 
 Lucas Pereira - Documentador
 
-Lucas Samuel - Desenvolvedor
-
-Jéssica Rocha - Desenvolvedora
-
 Samara Santos - Desenvolvedora
