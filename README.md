@@ -1,3 +1,5 @@
+Este é o repo principal do projeto
+
 "Streaming Moovix"
 
 //Propósito do sistema

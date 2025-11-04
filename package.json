@@ -1,0 +1,28 @@
+{
+  "name": "streaming-frontend",
+  "version": "1.0.0",
+  "description": "\"Streaming Moovix\"",
+  "main": "cadastro.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emanuelly168/Streaming-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Emanuelly168/Streaming-frontend/issues"
+  },
+  "homepage": "https://github.com/Emanuelly168/Streaming-frontend#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mysql2": "^3.15.3"
+  }
+}
