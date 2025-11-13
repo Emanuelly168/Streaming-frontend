@@ -1,11 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
-import fs from 'fs';
-import mysql from 'mysql2/promise';
-import bcrypt from 'bcryptjs';
 import { fileURLToPath } from 'url';
-
+import mysql from 'mysql2/promise';
+import bcryptjs from 'bcryptjs'; 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,23 +11,19 @@ const __dirname = path.dirname(__filename);
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(express.static(__dirname));
-
-const dataDir = path.join(__dirname, 'data');
-if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
-
+app.use(express.static(path.join(__dirname, '../Front')));
+app.use('/css', express.static(path.join(__dirname, '../css')));
+app.use('/imagens', express.static(path.join(__dirname, '../imagens'))); 
+app.use('/Script', express.static(path.join(__dirname, '../Script')));
 
 const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
     password: '2mic50@NOMAD',
     database: 'moovix',
-    port: 3306,
     waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
+    connectionLimit: 10
 });
-
 
 (async () => {
     try {
@@ -51,7 +45,7 @@ app.post('/register', async (req, res) => {
     }
 
     try {
-        const hashedPassword = await bcrypt.hash(password, 10);
+        const hashedPassword = await bcryptjs.hash(password, 10);
         const query = 'INSERT INTO cliente (nome, email, senha, telefone) VALUES (?, ?, ?, ?)';
         const [result] = await pool.execute(query, [name, email, hashedPassword, phone]);
 
@@ -83,13 +77,14 @@ app.post('/login', async (req, res) => {
         }
 
         const user = rows[0];
-        const match = await bcrypt.compare(password, user.senha);
+        const match = await bcryptjs.compare(password, user.senha);
 
         if (!match) {
             return res.status(401).json({ message: 'E-mail ou senha incorretos.' });
         }
 
         res.json({ 
+            sucess: true,
             message: 'Login realizado com sucesso!', 
             user: { id: user.id, nome: user.nome, email: user.email } 
         });
@@ -101,5 +96,5 @@ app.post('/login', async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server rodando em http://localhost:${PORT}`);
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
