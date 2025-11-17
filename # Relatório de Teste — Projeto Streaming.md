@@ -1,6 +1,6 @@
 # Relatório de Teste – Sistema Moovix
 
-## Objetivo - Lara
+## Objetivo 
 
 Consolidar os resultados da execução de testes no módulo de cadastro e login do Sistema Moovix. O objetivo foi validar a funcionalidade, robustez e segurança da aplicação, que utiliza HTML, CSS e JavaScript no front-end e uma API REST com Node.js e Express no back-end.
 
@@ -56,7 +56,7 @@ Consolidar os resultados da execução de testes no módulo de cadastro e login 
 
 ---
 
-## Ambiente e Abordagem de Teste - Lara
+## Ambiente e Abordagem de Teste 
 
 ### Ambiente de Teste
 
@@ -67,7 +67,7 @@ Consolidar os resultados da execução de testes no módulo de cadastro e login 
 | Banco de Dados | MySQL local (database `moovix`) |
 | Ferramentas | Postman, curl, DevTools do navegador, logs do Node.js |
 
-### Abordagem e Níveis - Guilherme
+### Abordagem e Níveis 
 
 * **Níveis:** Integração (API + BD), Sistema (fluxos manuais).
 * **Técnicas:** Testes funcionais manuais, partições de equivalência, análise de valor limite, testes negativos.
@@ -122,13 +122,13 @@ Consolidar os resultados da execução de testes no módulo de cadastro e login 
 
 ---
 
-## Cronograma: Planejado × Realizado – Guilherme
+## Cronograma: Planejado × Realizado 
 
 * Setup e execução: Setembro /2025 a 16/11/2025 — realizado conforme planejado com pequenos desvios operacionais.
 
 ---
 
-## Casos de Teste Executados - Guilherme
+## Casos de Teste Executados 
 
 (Executados manualmente / Postman / curl)
 
@@ -146,7 +146,7 @@ Consolidar os resultados da execução de testes no módulo de cadastro e login 
 
 ---
 
-## Resultado por Tipo e Nível - Giovanna
+## Resultado por Tipo e Nível
 
 Total de casos executados: 9 (CT-01…CT-09)
 
@@ -174,7 +174,7 @@ Total de casos executados: 9 (CT-01…CT-09)
 
 ---
 
-## Testes Não-Funcionais - Emanuelly
+## Testes Não-Funcionais 
 
 * **Performance:** Não executado (fora do escopo). Risco: desconhecido para picos de usuários.
 * **Segurança:**
@@ -194,7 +194,7 @@ Total de casos executados: 9 (CT-01…CT-09)
 
 ---
 
-## Defeitos e Análise - Lucas
+## Defeitos e Análise 
 
 Lista priorizada de defeitos, com causa e ação recomendada:
 
@@ -225,7 +225,7 @@ Lista priorizada de defeitos, com causa e ação recomendada:
 
 ---
 
-## Cobertura e Rastreabilidade - Lucas
+## Cobertura e Rastreabilidade 
 
 ### Requisitos Mapeados → Casos de Teste (Exemplo)
 
@@ -234,7 +234,7 @@ Lista priorizada de defeitos, com causa e ação recomendada:
 * **RQ-03:** Servir front e assets → CT-10 (integração manual; verificar paths)
 * **RQ-04:** Persistência correta em MySQL → CT-01, CT-03, CT-04, CT-05
 
-### Cobertura Atual - Giovanna
+### Cobertura Atual
 
 * **Requisitos críticos (RQ-01, RQ-02, RQ-04):** Cobertos por casos manuais → cobertura funcional: 100% (em nível de verificação manual)
 * **Requisitos de UI/Assets (RQ-03):** Cobertura parcial (issues com assets detectadas)
@@ -253,7 +253,7 @@ Lista priorizada de defeitos, com causa e ação recomendada:
 
 ---
 
-## Recomendações e Ações Corretivas - Samara
+## Recomendações e Ações Corretivas
 
 * Implementar validação de nome no servidor (Prioridade: Alta):
     * Regex recomendado: `/^[\p{L}\s'-]+$/u` e length >= 10.
@@ -263,14 +263,14 @@ Lista priorizada de defeitos, com causa e ação recomendada:
 * Revisar tipo e formato do campo telefone (usar `VARCHAR(20)` ou garantir extração de dígitos no servidor).
 * Usar Postman/curl para regressão automatizada local; considerar introduzir suíte de testes automatizados no próximo ciclo.
 
-### Plano de Verificação Pós-Correção - Samara
+### Plano de Verificação Pós-Correção 
 
 * Re-executar CT-02 (Nome com números) e CT-05 (Email duplicado) após aplicar validações e índice único.
 * Executar bateria manual completa + scripts curl para cobertura rápida de regressão.
 
 ---
 
-## Conclusão – Lara & Guilherme
+## Conclusão 
 
 O projeto está funcional em seus fluxos críticos quando os dados obedecem às validações esperadas. No entanto, requer correções imediatas de validação de entrada (especialmente no campo nome).
 
