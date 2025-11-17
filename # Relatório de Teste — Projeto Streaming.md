@@ -145,14 +145,14 @@ O projeto está funcional em fluxos críticos quando os dados obedecem às valid
 - Exemplos curl para teste rápido:
 ```bash
 # Cadastro válido
-curl -i -X POST http://localhost:3000/register \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Usuario Teste Valido","email":"teste@ex.com","password":"senhaSegura1","phone":"11999999999"}'
+ POST http://localhost:3000/register \
+  
+  -d '{"name":"Caio Lucas", "phone":"11999999999", "email":"caio@gmail.com", "password":"12345678", "confirmPasswod": "12345678"}'
 
 # Login
-curl -i -X POST http://localhost:3000/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"teste@ex.com","password":"senhaSegura1"}'
+ POST http://localhost:3000/login \
+ 
+  -d '{"email":"kaio@gmail.com","password":"12345678"}'
 ```
 
 ---
